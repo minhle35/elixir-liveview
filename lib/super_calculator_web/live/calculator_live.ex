@@ -69,8 +69,6 @@ defmodule SuperCalculatorWeb.CalculatorLive do
               step="1"
               placeholder="e.g. 80000"
               value={@salary}
-              phx-keyup="calculate"
-              phx-key="Enter"
               phx-change="calculate"
               name="salary"
               class="input input-bordered w-full"
