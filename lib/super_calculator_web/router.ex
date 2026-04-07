@@ -17,7 +17,7 @@ defmodule SuperCalculatorWeb.Router do
   scope "/", SuperCalculatorWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", CalculatorLive
   end
 
   # Other scopes may use custom stacks.

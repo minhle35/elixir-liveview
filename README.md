@@ -27,3 +27,13 @@ mix phx.new elixir_liveview --app super_calculator --no-mailer 2>&1
 ```
 mix deps.get
 ```
+
+## Create the storage for this project
+```
+mix ecto.create
+```
+
+## Create migration for calculations table
+```
+mix ecto.gen.migration create_calculations 2>&1
+```
