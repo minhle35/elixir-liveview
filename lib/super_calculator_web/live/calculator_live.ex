@@ -101,7 +101,7 @@ defmodule SuperCalculatorWeb.CalculatorLive do
         <div>
           <h2 class="text-lg font-semibold mb-3">Recent Calculations</h2>
           <div id="calculations" phx-update="stream" class="space-y-2">
-            <div class="hidden only:block text-base-content/50 text-sm">No calculations saved yet.</div>
+            <div id="empty-state" class="hidden only:block text-base-content/50 text-sm">No calculations saved yet.</div>
             <div
               :for={{id, calc} <- @streams.calculations}
               id={id}
