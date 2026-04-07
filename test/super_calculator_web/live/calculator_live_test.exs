@@ -13,7 +13,7 @@ defmodule SuperCalculatorWeb.CalculatorLiveTest do
     {:ok, view, _html} = live(conn, "/")
 
     view
-    |> element("#salary-input")
+    |> element("#calculator-form")
     |> render_change(%{"salary" => "100000"})
 
     assert has_element?(view, "#save-btn")
@@ -24,7 +24,7 @@ defmodule SuperCalculatorWeb.CalculatorLiveTest do
     {:ok, view, _html} = live(conn, "/")
 
     view
-    |> element("#salary-input")
+    |> element("#calculator-form")
     |> render_change(%{"salary" => "abc"})
 
     assert render(view) =~ "Please enter a valid salary"
@@ -34,12 +34,12 @@ defmodule SuperCalculatorWeb.CalculatorLiveTest do
     {:ok, view, _html} = live(conn, "/")
 
     view
-    |> element("#salary-input")
+    |> element("#calculator-form")
     |> render_change(%{"salary" => "80000"})
 
     view
-    |> element("#save-btn")
-    |> render_click()
+    |> element("#calculator-form")
+    |> render_submit(%{"salary" => "80000"})
 
     assert render(view) =~ "80000"
     assert render(view) =~ "9200"

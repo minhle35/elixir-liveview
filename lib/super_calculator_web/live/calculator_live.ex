@@ -59,7 +59,7 @@ defmodule SuperCalculatorWeb.CalculatorLive do
           <p class="mt-1 text-base-content/60">Calculate your 11.5% superannuation contribution</p>
         </div>
 
-        <div class="card bg-base-200 p-6 space-y-4">
+        <form id="calculator-form" phx-change="calculate" phx-submit="save" class="card bg-base-200 p-6 space-y-4">
           <div>
             <label for="salary-input" class="block text-sm font-medium mb-1">Annual Salary ($)</label>
             <input
@@ -69,9 +69,6 @@ defmodule SuperCalculatorWeb.CalculatorLive do
               step="1"
               placeholder="e.g. 80000"
               value={@salary}
-              phx-keyup="calculate"
-              phx-key="Enter"
-              phx-change="calculate"
               name="salary"
               class="input input-bordered w-full"
             />
@@ -89,14 +86,13 @@ defmodule SuperCalculatorWeb.CalculatorLive do
             </div>
             <button
               id="save-btn"
-              phx-click="save"
-              phx-value-salary={@salary}
+              type="submit"
               class="btn btn-primary w-full"
             >
               Save Calculation
             </button>
           <% end %>
-        </div>
+        </form>
 
         <div>
           <h2 class="text-lg font-semibold mb-3">Recent Calculations</h2>
