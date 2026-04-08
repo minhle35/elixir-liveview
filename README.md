@@ -1,6 +1,6 @@
 # Super Calculator
 
-A Phoenix LiveView app that calculates Australian superannuation contributions (11.5%) in real-time as the user types, with calculation history persisted to PostgreSQL via Ecto. Deployed on Fly.io.
+A Phoenix LiveView app that calculates Australian superannuation contributions (11.5%) in real-time as the user types, with calculation history persisted to PostgreSQL via Ecto. Deployed on Railway.
 
 ## Features
 
@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/4909c7b7-9616-471f-a29e-afa607bc0c27
 - Elixir 1.19.5 / Erlang OTP 28
 - Phoenix 1.8.5 with LiveView
 - Ecto + PostgreSQL 14
-- Deployed on Fly.io
+- Deployed on Railway
 
 ## Setup
 
