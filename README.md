@@ -10,6 +10,7 @@ A Phoenix LiveView app that calculates Australian superannuation contributions (
 - PostgreSQL persistence with Ecto migrations
 
 ## Demo
+<img width="1903" height="939" alt="Screenshot 2026-04-09 at 12 22 00 PM" src="https://github.com/user-attachments/assets/24284f78-51e9-4a20-b69c-ef69c79d03c7" />
 
 
 
