@@ -137,7 +137,7 @@ defmodule SuperCalculator.Retirement do
 
     {pre60_gap_covered, pre60_shortfall} =
       case compute_early_phase(plan) do
-        {:covered, _} -> {plan.retirement_age < 60, nil}
+        {:covered, _} -> {true, nil}
         {:shortfall, diff} -> {false, diff}
       end
 
