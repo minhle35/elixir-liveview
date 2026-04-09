@@ -78,6 +78,7 @@ defmodule SuperCalculatorWeb.RetirementLive do
           phx-change="validate"
           phx-submit="save"
           class="space-y-6"
+          :let={f}
         >
           <%!-- PHASE 1: Accumulation --%>
           <div class="card bg-base-200 p-6 space-y-4">
@@ -87,32 +88,32 @@ defmodule SuperCalculatorWeb.RetirementLive do
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium mb-1">Current Age</label>
-                <.input field={@changeset[:current_age]} type="number" min="1" max="99" placeholder="e.g. 30" />
+                <.input field={f[:current_age]} type="number" min="1" max="99" placeholder="e.g. 30" />
               </div>
 
               <div>
                 <label class="block text-sm font-medium mb-1">Retirement Age</label>
-                <.input field={@changeset[:retirement_age]} type="number" min="1" max="99" placeholder="e.g. 65" />
+                <.input field={f[:retirement_age]} type="number" min="1" max="99" placeholder="e.g. 65" />
               </div>
 
               <div>
                 <label class="block text-sm font-medium mb-1">Annual Salary ($)</label>
-                <.input field={@changeset[:current_salary]} type="number" min="0" placeholder="e.g. 100000" />
+                <.input field={f[:current_salary]} type="number" min="0" placeholder="e.g. 100000" />
               </div>
 
               <div>
                 <label class="block text-sm font-medium mb-1">Super Rate (%)</label>
-                <.input field={@changeset[:super_rate]} type="number" min="0" max="100" step="0.1" placeholder="11.5" />
+                <.input field={f[:super_rate]} type="number" min="0" max="100" step="0.1" placeholder="11.5" />
               </div>
 
               <div>
                 <label class="block text-sm font-medium mb-1">Current Super Balance ($)</label>
-                <.input field={@changeset[:current_super_balance]} type="number" min="0" placeholder="e.g. 50000" />
+                <.input field={f[:current_super_balance]} type="number" min="0" placeholder="e.g. 50000" />
               </div>
 
               <div>
                 <label class="block text-sm font-medium mb-1">Investment Return Rate (%)</label>
-                <.input field={@changeset[:investment_return_rate]} type="number" min="0" step="0.1" placeholder="7.0" />
+                <.input field={f[:investment_return_rate]} type="number" min="0" step="0.1" placeholder="7.0" />
               </div>
             </div>
 
@@ -124,7 +125,7 @@ defmodule SuperCalculatorWeb.RetirementLive do
               </div>
               <div>
                 <label class="block text-sm font-medium mb-1">Personal Savings ($)</label>
-                <.input field={@changeset[:current_savings]} type="number" min="0" placeholder="e.g. 200000" />
+                <.input field={f[:current_savings]} type="number" min="0" placeholder="e.g. 200000" />
               </div>
             <% end %>
           </div>
@@ -137,12 +138,12 @@ defmodule SuperCalculatorWeb.RetirementLive do
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label class="block text-sm font-medium mb-1">Annual Spend in Retirement ($)</label>
-                <.input field={@changeset[:annual_spend_in_retirement]} type="number" min="0" placeholder="e.g. 60000" />
+                <.input field={f[:annual_spend_in_retirement]} type="number" min="0" placeholder="e.g. 60000" />
               </div>
 
               <div>
                 <label class="block text-sm font-medium mb-1">Life Expectancy</label>
-                <.input field={@changeset[:life_expectancy]} type="number" min="1" max="129" placeholder="85" />
+                <.input field={f[:life_expectancy]} type="number" min="1" max="129" placeholder="85" />
               </div>
             </div>
           </div>
