@@ -38,21 +38,6 @@ defmodule SuperCalculatorWeb.RetirementLive do
      |> assign(:result, result)}
   end
 
-  def handle_event("save", %{"retirement_plan" => params}, socket) do
-    merged = Map.merge(@defaults, params)
-
-    case Retirement.save_plan(merged) do
-      {:ok, _} ->
-        {:noreply, put_flash(socket, :info, "Retirement plan saved!")}
-
-      {:error, changeset} ->
-        {:noreply,
-         socket
-         |> assign(:changeset, Map.put(changeset, :action, :validate))
-         |> put_flash(:error, "Please fix the errors below")}
-    end
-  end
-
   defp early_retirement?(changeset) do
     case Ecto.Changeset.get_field(changeset, :retirement_age) do
       nil -> false
@@ -76,7 +61,6 @@ defmodule SuperCalculatorWeb.RetirementLive do
           for={@changeset}
           id="retirement-form"
           phx-change="validate"
-          phx-submit="save"
           class="space-y-6"
           :let={f}
         >

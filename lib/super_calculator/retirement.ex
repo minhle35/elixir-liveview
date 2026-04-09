@@ -13,6 +13,9 @@ defmodule SuperCalculator.Retirement do
     end
   end
 
+  # NOTE: save_plan/1 is intentionally unused in the current deployment.
+  # For budget reasons, we keep the app stateless — no DB persistence for retirement plans.
+  # This function is retained for future use if persistence is needed.
   @doc """
   Validates, persists the plan and result in a transaction.
   Returns {:ok, {plan, result}} or {:error, changeset}.
