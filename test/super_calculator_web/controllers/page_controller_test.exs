@@ -5,6 +5,6 @@ defmodule SuperCalculatorWeb.PageControllerTest do
 
   test "GET / redirects to LiveView", %{conn: conn} do
     {:ok, _view, html} = live(conn, "/")
-    assert html =~ "Super Calculator"
+    assert html =~ "Retirement Planner"
   end
 end
