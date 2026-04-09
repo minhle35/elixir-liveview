@@ -173,8 +173,6 @@ defmodule SuperCalculatorWeb.RetirementLive do
                   </p>
                 </div>
               <% end %>
-
-              <button type="submit" class="btn btn-primary w-full">Save Retirement Plan</button>
             </div>
           <% end %>
         </.form>
